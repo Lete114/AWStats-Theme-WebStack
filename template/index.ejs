@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title><%-themes.title%></title>
+    <link rel="shortcut icon" href="<%-themes.favicon%>">
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="<%-themes.author%>" />
+    <meta name="keywords" content="<%-themes.keywords%>">
+    <meta name="description" content="<%-themes.description%>">
+    <!-- / FB Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="<%-themes.url%>">
+    <meta property="og:title" content="<%-themes.title%>">
+    <meta property="og:description" content="<%-themes.description%>">
+    <meta property="og:image" content="<%-themes.image%>">
+    <meta property="og:site_name" content="<%-themes.title%>">
+    <!-- / Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%-themes.title%>">
+    <meta name="twitter:description" content="<%-themes.description%>">
+    <meta name="twitter:image" content="<%-themes.image%>">
+    <link rel="stylesheet" href="<%-themes.CDN.nav%>">
+    <link rel="stylesheet" href="<%-themes.CDN.xenon_core%>">
+    <link rel="stylesheet" href="<%-themes.CDN.bootstrap_css%>">
+    <link rel="stylesheet" href="<%-themes.CDN.xenon_components%>">
+    <link rel="stylesheet" href="<%-themes.CDN.fontawesome%>">
+    <%if(themes.analytics.baidu!=null){%>
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?<%-themes.analytics.baidu%>";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <%}%>
+    <%if(themes.analytics.google!=null){%>
+    <!-- 谷歌统计 -->
+    <script>
+        const script = document.createElement('script')
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=<%-themes.analytics.google%>'
+        script.async = true
+        document.head.appendChild(script)
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', '<%-themes.analytics.google%>');
+    </script>
+    <%}%>
+    <script src="<%-themes.CDN.jQuery%>"></script>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        @media screen and (max-width: 768px){
+            .logo-env .mobile-menu-toggle a {
+                margin-top: 16px;
+            }
+        }
+        #rightside {
+            display: none;
+            position: fixed;
+            right: 0;
+            bottom: 80px;
+            z-index: 100;
+            width: 30px;
+            cursor: pointer;
+        }
+        #rightside #rightside-item {
+            text-align: center;
+        }
+        #rightside #rightside-item a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: <%-themes.color%>;
+            color: #fff;
+            margin-bottom: 3px;
+            border-radius: 6px;
+        }
+        #rightside #rightside-item a i {
+            margin-top: 7px;
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: <%-themes.color%>;
+            background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
+            border-radius: 2em;
+        }
+    </style>
+</head>
+<body id="body">
+    <div class="page-container">
+        <div class="sidebar-menu toggle-others fixed">
+            <div class="sidebar-menu-inner">
+                <header class="logo-env">
+                    <!-- logo -->
+                    <div class="logo">
+                        <a href="./index.html" class="logo-expanded">
+                            <img src="<%-themes.logo.expanded%>" width="100%" alt="" />
+                        </a>
+                        <a href="./index.html" class="logo-collapsed">
+                            <img src="<%-themes.logo.collapsed%>" width="40" alt="" />
+                        </a>
+                    </div>
+                    <div class="mobile-menu-toggle visible-xs">
+                        <a href="#" data-toggle="mobile-menu">
+                            <i class="fa-bars"></i>
+                        </a>
+                    </div>
+                </header>
+                <ul id="main-menu" class="main-menu">
+                    <% for( let value of themes.menu ) {%>
+                        <%if(value.submenu){%>
+                            <li>
+                                <a>
+                                    <i class="<%-value.icon%>"></i>
+                                    <span class="title"><%-value.name%></span>
+                                </a>
+                                <ul>
+                                    <% for( let values of value.submenu ) { %>
+                                    <li>
+                                        <a href="#<%-values.name%>" class="smooth">
+                                            <span class="title"><%-values.name%></span>
+                                        </a>
+                                    </li>
+                                    <% } %>
+                                </ul>
+                            </li>
+                        <% }else{ %>
+                            <li>
+                                <a href="#<%-value.name%>" class="smooth">
+                                    <i class="<%-value.icon%>"></i>
+                                    <span class="title" test><%-value.name%></span>
+                                </a>
+                            </li>
+                        <%}%>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <nav class="navbar user-info-navbar" role="navigation">
+                <ul class="user-info-menu left-links list-inline list-unstyled">
+                    <li class="hidden-sm hidden-xs">
+                        <a href="#" data-toggle="sidebar">
+                            <i class="fa-bars"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="user-info-menu right-links list-inline list-unstyled">
+                    <li class="hidden-sm hidden-xs">
+                        <a href="https://github.com/lete114/WebStack" target="_blank">
+                            <i class="fa-github"></i> GitHub
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <% if(themes.search.enable){ %>
+                <link rel="stylesheet" href="<%-themes.CDN.search_css%>">
+                <script src="<%-themes.CDN.search_js%>"></script>
+                <section class="sousuo">
+                  <div class="search">
+                    <div class="search-box">
+                      <img src="<%-themes.search.default_search_icon%>" class="search-icon">
+                      <input type="text" id="txt" class="search-input" autocomplete="off" placeholder="请输入关键字，按回车 / Enter 搜索">
+                      <button class="search-btn" id="search-btn"><i class="fa fa-search"></i></button>
+                    </div>
+                    <!-- 搜索热词 -->
+                    <div class="box search-hot-text" id="box" style="display: none;">
+                      <ul></ul>
+                    </div>
+                    <!-- 搜索引擎 -->
+                    <div class="search-engine" style="display: none;">
+                      <div class="search-engine-head">
+                        <strong class="search-engine-tit">选择您的默认搜索引擎：</strong>
+                        <div class="search-engine-tool">搜索热词： <span id="switch-btn"></span></div>
+                      </div>
+                      <ul class="search-engine-list search-engine-list_zmki_ul">
+                      </ul>
+                    </div>
+                </section>
+                <script>
+                    search(<%-JSON.stringify(themes.search.search_source)%>,"<%-themes.search.default_search_source%>")
+                </script>
+              <% } %>
+            <% for( let value of themes.menu ) { %>
+                <%if(value.submenu){%>
+                    <% for( let values of value.submenu ) { %>
+                        <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="<%-values.name%>"></i>
+                            <%-values.name%>
+                        </h4>
+                        <div class="row">
+                            <% for( let submenuValues of values.site ) { %>
+                                <div class="col-sm-3">
+                                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('<%-submenuValues.url%>', '_blank')"
+                                        data-toggle="tooltip" data-placement="bottom" data-original-title="<%-themes.hover == 'desc' ? submenuValues.description : submenuValues.url%>">
+                                        <div class="xe-comment-entry">
+                                            <a class="xe-user-img">
+                                                <img data-src="<%-submenuValues.img%>" class="lozad img-circle" width="40">
+                                            </a>
+                                            <div class="xe-comment">
+                                                <a href="#" class="xe-user-name overflowClip_1">
+                                                    <strong><%-submenuValues.name%></strong>
+                                                </a>
+                                                <p class="overflowClip_2"><%-submenuValues.description%></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <%}%>
+                        </div>
+                        <br />
+                    <%}%>
+                <%}else{%>
+                <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="<%-value.name%>"></i><%-value.name%></h4>
+                <div class="row">
+                    <% for( let values of value.site ) { %>
+                    <div class="col-sm-3">
+                        <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('<%-values.url%>', '_blank')"
+                            data-toggle="tooltip" data-placement="bottom" title="" data-original-title="<%-themes.hover == 'desc' ? values.description : values.url%>">
+                            <div class="xe-comment-entry">
+                                <a class="xe-user-img">
+                                    <img data-src="<%-values.img%>" class="lozad img-circle" width="40">
+                                </a>
+                                <div class="xe-comment">
+                                    <a href="#" class="xe-user-name overflowClip_1">
+                                        <strong><%-values.name%></strong>
+                                    </a>
+                                    <p class="overflowClip_2"><%-values.description%></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%}%>
+                </div>
+                <br />
+                <%}%>
+            <%}%><footer class="main-footer sticky footer-type-1">
+                <div class="footer-inner">
+                    <div class="footer-text">
+                        <% var now=new Date().getFullYear(); %>
+                        &copy; <%- themes.since===now ? since : (themes.since + " - " + now) %>
+                        <a href="<%-themes.url%>"><strong><%-themes.author%></strong></a>
+                        Modify by<a href="https://lete114.top" target="_blank">
+                        <strong>Lete乐特</strong></a> 
+                        Design by <a href="http://viggoz.com" target="_blank">
+                        <strong>Viggo</strong></a>
+                    </div>
+                    <% if (themes.busuanzi.enable) { %>
+                    <div style="float: right;">
+                        <span id="busuanzi_container_site_pv"><%- themes.busuanzi.pv.replace(/\$pv/i,'<span id="busuanzi_value_site_pv"></span>') %></span> |
+                        <span id="busuanzi_container_site_uv"><%- themes.busuanzi.uv.replace(/\$uv/i,'<span id="busuanzi_value_site_uv"></span>') %></span>
+                    </div>
+                    <script src="<%-themes.CDN.busuanzi%>"></script>
+                    <% } %>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <section id="rightside" style="display: block;">
+        <div id="rightside-item">
+            <a href="#body" title="回到顶部"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </section>
+    <script src="<%-themes.CDN.bootstrap_js%>"></script>
+    <script src="<%-themes.CDN.TweenMax%>"></script>
+    <script src="<%-themes.CDN.resizeable%>"></script>
+    <script src="<%-themes.CDN.joinable%>"></script>
+    <script src="<%-themes.CDN.xenon_api%>"></script>
+    <script src="<%-themes.CDN.xenon_toggles%>"></script>
+    <script src="<%-themes.CDN.xenon_custom%>"></script>
+    <script src="<%-themes.CDN.lozad%>"></script>
+    <script type="text/javascript">
+
+        $(window).scroll(function() {
+            // 向下滚动时右侧栏淡出
+            var rightside = $(window).scrollTop();
+            if (rightside > 100) {
+                $('#rightside').fadeIn(300);
+            } else {
+                $('#rightside').fadeOut(300);
+            }
+        })
+        //img lazy loaded
+        const observer = lozad();
+        observer.observe();
+    </script>
+</body>
+
+</html>
