@@ -205,10 +205,10 @@
                                         data-toggle="tooltip" data-placement="bottom" data-original-title="<%-themes.hover == 'desc' ? submenuValues.description : submenuValues.url%>">
                                         <div class="xe-comment-entry">
                                             <a class="xe-user-img">
-                                                <img data-src="<%-submenuValues.img%>" class="lozad img-circle" width="40">
+                                                <img data-src="<%-submenuValues.img%>" target="_blank" class="lozad img-circle" width="40">
                                             </a>
                                             <div class="xe-comment">
-                                                <a href="#" class="xe-user-name overflowClip_1">
+                                                <a href="<%-submenuValues.url%>" class="xe-user-name overflowClip_1">
                                                     <strong><%-submenuValues.name%></strong>
                                                 </a>
                                                 <p class="overflowClip_2"><%-submenuValues.description%></p>
@@ -232,7 +232,7 @@
                                     <img data-src="<%-values.img%>" class="lozad img-circle" width="40">
                                 </a>
                                 <div class="xe-comment">
-                                    <a href="#" class="xe-user-name overflowClip_1">
+                                    <a href="<%-values.url%>" target="_blank" class="xe-user-name overflowClip_1">
                                         <strong><%-values.name%></strong>
                                     </a>
                                     <p class="overflowClip_2"><%-values.description%></p>
