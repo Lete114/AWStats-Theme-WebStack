@@ -3,32 +3,32 @@
 
 <head>
     <meta charset="utf-8">
-    <title><%-themes.error_404.title%></title>
+    <title><%-theme.error_404.title%></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
-    <link rel="shortcut icon" href="<%-themes.favicon%>">
-    <%if(themes.analytics.baidu!=null){%>
+    <link rel="shortcut icon" href="<%-theme.favicon%>">
+    <%if(theme.analytics.baidu!=null){%>
         <!-- 百度统计 -->
         <script>
             var _hmt = _hmt || [];
             (function () {
                 var hm = document.createElement("script");
-                hm.src = "https://hm.baidu.com/hm.js?<%-themes.analytics.baidu%>";
+                hm.src = "https://hm.baidu.com/hm.js?<%-theme.analytics.baidu%>";
                 var s = document.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(hm, s);
             })();
         </script>
         <%}%>
-        <%if(themes.analytics.google!=null){%>
+        <%if(theme.analytics.google!=null){%>
         <!-- 谷歌统计 -->
         <script>
             const script = document.createElement('script')
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=<%-themes.analytics.google%>'
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=<%-theme.analytics.google%>'
             script.async = true
             document.head.appendChild(script)
             window.dataLayer = window.dataLayer || [];
             function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
-            gtag('config', '<%-themes.analytics.google%>');
+            gtag('config', '<%-theme.analytics.google%>');
         </script>
         <%}%>
     <style>
@@ -212,9 +212,9 @@
     <section id="about" class="animated bounce-in">
         <div class="bg-align">
             <h1>404</h1>
-            <p><%-themes.error_404.subtitle%></p>
-            <p><%-themes.error_404.description%></p>
-            <p><a href="<%-themes.error_404.return%>">👉  <%-themes.error_404.return%></a></p>
+            <p><%-theme.error_404.subtitle%></p>
+            <p><%-theme.error_404.description%></p>
+            <p><a href="<%-theme.error_404.return%>">👉  <%-theme.error_404.return%></a></p>
         </div>
     </section>
 </body>
