@@ -1,0 +1,14 @@
+{
+  "name": "awstats-theme-webstack",
+  "version": "1.0.0",
+  "description": "A concise site navigation theme",
+  "keywords": [
+    "awstats",
+    "awstats-theme-webstack",
+    "webstack",
+    "static"
+  ],
+  "author": "Lete乐特",
+  "license": "MIT",
+  "dependencies": {}
+}

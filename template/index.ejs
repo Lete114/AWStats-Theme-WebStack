@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="<%-theme.CDN.bootstrap_css%>">
     <link rel="stylesheet" href="<%-theme.CDN.xenon_components%>">
     <link rel="stylesheet" href="<%-theme.CDN.fontawesome%>">
+    <link rel="stylesheet" href="<%-theme.CDN.linecons%>">
     <%if(theme.analytics.baidu!=null){%>
     <!-- 百度统计 -->
     <script>
@@ -251,7 +252,7 @@
                         &copy; <%- theme.since===now ? since : (theme.since + " - " + now) %>
                         <a href="<%-theme.url%>"><strong><%-theme.author%></strong></a>
                         Modify by<a href="https://lete114.top" target="_blank">
-                        <strong>Lete乐特</strong></a> 
+                        <strong>Lete乐特</strong></a>
                         Design by <a href="http://viggoz.com" target="_blank">
                         <strong>Viggo</strong></a>
                     </div>
@@ -280,7 +281,6 @@
     <script src="<%-theme.CDN.xenon_custom%>"></script>
     <script src="<%-theme.CDN.lozad%>"></script>
     <script type="text/javascript">
-
         $(window).scroll(function() {
             // 向下滚动时右侧栏淡出
             var rightside = $(window).scrollTop();
@@ -293,6 +293,7 @@
         //img lazy loaded
         const observer = lozad();
         observer.observe();
+
     </script>
 </body>
 
