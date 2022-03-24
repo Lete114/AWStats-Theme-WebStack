@@ -7,11 +7,11 @@
 
 ## 基础配置
 title: WebStack.cc - 设计师网址导航 # 网站昵称
-favicon: ./images/favicon.png # 网站图标
+favicon: /images/favicon.png # 网站图标
 author: Lete乐特 # 昵称
 url: http://www.webstack.cc/ #网址
 color: '#e58a8a' ## 可自定义颜色(目前只跳转滚动条和回到顶部按钮) 例如：#00c4b6
-image: ./images/webstack_banner_cn.png # 图片
+image: /images/webstack_banner_cn.png # 图片
 # 关键字
 keywords: UI设计,UI设计素材,设计导航,网址导航,设计资源,创意导航,创意网站导航,设计师网址大全,设计素材大全,设计师导航,UI设计资源,优秀UI设计欣赏,设计师导航,设计师网址大全,设计师网址导航,产品经理网址导航,UX师网址导航,www.webstack.cc
 # 描述
@@ -20,8 +20,8 @@ description: WebStack - 收集国内外优秀设计网站、UI设计资源网站
 
 # 网站logo
 logo:
-  expanded: ./images/logo@2x.png # 大logo
-  collapsed: ./images/logo-collapsed@2x.png # 小logo
+  expanded: /images/logo@2x.png # 大logo
+  collapsed: /images/logo-collapsed@2x.png # 小logo
 
 # 导航菜单
 hover: desc ## 鼠标悬浮显示 网址/描述 网址：site 描述：desc
@@ -80,52 +80,52 @@ menu:
 search:
   enable: true # 是否开启
   default_search_source: https://www.baidu.com/s?wd= ## 默认搜索平台
-  default_search_icon: ./images/search/baidu.ico ## 默认搜索图标
+  default_search_icon: /images/search/baidu.ico ## 默认搜索图标
   search_source: # 搜索源
     - name: 百度 # 昵称
-      img: ./images/search/baidu.ico # 源图标
+      img: /images/search/baidu.ico # 源图标
       url: https://www.baidu.com/s?wd= # 搜索平台的请求地址
     - name: 谷歌
-      img: ./images/search/google.ico
+      img: /images/search/google.ico
       url: https://www.google.com/search?q=
     - name: 必应
-      img: ./images/search/bing.ico
+      img: /images/search/bing.ico
       url: https://cn.bing.com/search?q=
     - name: 好搜
-      img: ./images/search/360.ico
+      img: /images/search/360.ico
       url: https://www.so.com/s?q=
     - name: 搜狗
-      img: ./images/search/sogou.ico
+      img: /images/search/sogou.ico
       url: https://www.sogou.com/web?query=
     - name: 淘宝
-      img: ./images/search/taobao.ico
+      img: /images/search/taobao.ico
       url: https://s.taobao.com/search?q=
     - name: 京东
-      img: ./images/search/JD.ico
+      img: /images/search/JD.ico
       url: http://search.jd.com/Search?keyword=
     - name: 天猫
-      img: ./images/search/tianmao.ico
+      img: /images/search/tianmao.ico
       url: https://list.tmall.com/search_product.htm?q=
     - name: "1688" ## 如果是数字推荐使用双引号 "" 包起来(不用双引号也可以)
-      img: ./images/search/1688.ico
+      img: /images/search/1688.ico
       url: https://s.1688.com/selloffer/offer_search.htm?keywords=
     - name: 知乎
-      img: ./images/search/zhihu.ico
+      img: /images/search/zhihu.ico
       url: https://www.zhihu.com/search?type=content&q=
     - name: 微博
-      img: ./images/search/weibo.ico
+      img: /images/search/weibo.ico
       url: https://s.weibo.com/weibo/
     - name: B站
-      img: ./images/search/bilibili.ico
+      img: /images/search/bilibili.ico
       url: http://search.bilibili.com/all?keyword=
     - name: 豆瓣
-      img: ./images/search/douban.ico
+      img: /images/search/douban.ico
       url: https://www.douban.com/search?source=suggest&q=
     - name: 优酷
-      img: ./images/search/youku.ico
+      img: /images/search/youku.ico
       url: https://so.youku.com/search_video/q_
     - name: GitHub
-      img: ./images/search/github.ico
+      img: /images/search/github.ico
       url: https://github.com/search?utf8=✓&q=
 
 since: 2020 # 网站开启时间
@@ -149,26 +149,25 @@ analytics:
   google: # 谷歌分析
 
 CDN:
-  linecons: ./css/fonts/linecons/css/linecons.css
-  fontawesome: ./css/fonts/fontawesome/css/font-awesome.min.css
-  bootstrap_css: ./css/bootstrap.css
-  bootstrap_js: https://cdn.jsdelivr.net/npm/bootstrap@3.3.1/dist/js/bootstrap.min.js
-  xenon_core: ./css/xenon-core.css
-  xenon_components: ./css/xenon-components.css
-  nav: ./css/nav.css
-  jQuery: https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js
+  fontawesome: /css/font-awesome.min.css
+  bootstrap_css: /css/bootstrap.css
+  bootstrap_js: /js/bootstrap.min.js
+  xenon_core: /css/xenon-core.css
+  xenon_components: /css/xenon-components.css
+  nav: /css/nav.css
+  jQuery: /js/jquery-1.11.1.min.js
 
   # search
-  search_js: ./js/search.js
-  search_css: ./css/search.css
+  search_js: /js/search.js
+  search_css: /css/search.css
 
   # 不蒜子
-  busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
+  busuanzi: /js/busuanzi.pure.mini.js
 
-  TweenMax: ./js/TweenMax.min.js
-  resizeable: ./js/resizeable.js
-  joinable: ./js/joinable.js
-  xenon_api: ./js/xenon-api.js
-  xenon_toggles: ./js/xenon-toggles.js
-  xenon_custom: ./js/xenon-custom.js
-  lozad: https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js
+  TweenMax: /js/TweenMax.min.js
+  resizeable: /js/resizeable.js
+  joinable: /js/joinable.js
+  xenon_api: /js/xenon-api.js
+  xenon_toggles: /js/xenon-toggles.js
+  xenon_custom: /js/xenon-custom.js
+  lozad: /js/lozad.min.js

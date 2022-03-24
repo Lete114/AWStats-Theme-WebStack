@@ -1,5 +1,11 @@
-function search(data,defaultSearch) {
+function search(data,defaultSearch) { 
+    var searchJSON={}
+    try {searchJSON = JSON.parse(localStorage.search)} catch (error) {}
     $(".search-icon").css("opacity", "1");
+    if (searchJSON.source) {
+        defaultSearch = searchJSON.source
+        $(".search-icon").attr("src",searchJSON.ico);
+    }
     var listIndex = -1;
     var hotList = 0;
     var searchData = {
@@ -138,6 +144,7 @@ function search(data,defaultSearch) {
         $(".search-icon").attr("src",SearchIcon);
         searchData.thisSearch = searchData.data[index].url;
         $(".search-engine").css("display", "none");
+        localStorage.search = JSON.stringify({ico:SearchIcon,source:searchData.thisSearch})
     });
     // $(".search-icon").css("background-position", searchData.thisSearchIcon);
     $("#search-btn").click(function () {
