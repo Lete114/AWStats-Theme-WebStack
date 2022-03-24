@@ -1,3 +1,4 @@
+---
 #--------------------------------------------------------
 # Awstats-Themes-WebStack
 # 项目地址：https://github.com/lete114/WebStack
@@ -10,13 +11,12 @@ title: WebStack.cc - 设计师网址导航 # 网站昵称
 favicon: /images/favicon.png # 网站图标
 author: Lete乐特 # 昵称
 url: http://www.webstack.cc/ #网址
-color: '#e58a8a' ## 可自定义颜色(目前只跳转滚动条和回到顶部按钮) 例如：#00c4b6
+color: "#e58a8a" ## 可自定义颜色(目前只跳转滚动条和回到顶部按钮) 例如：#00c4b6
 image: /images/webstack_banner_cn.png # 图片
 # 关键字
 keywords: UI设计,UI设计素材,设计导航,网址导航,设计资源,创意导航,创意网站导航,设计师网址大全,设计素材大全,设计师导航,UI设计资源,优秀UI设计欣赏,设计师导航,设计师网址大全,设计师网址导航,产品经理网址导航,UX师网址导航,www.webstack.cc
 # 描述
 description: WebStack - 收集国内外优秀设计网站、UI设计资源网站、灵感创意网站、Resources网站，定时更新分享优质产品设计书签。www.webstack.cc
-
 
 # 网站logo
 logo:
@@ -29,28 +29,28 @@ menu:
   - name: 演示二级菜单
     icon: far fa-star
     submenu: # 二级菜单
-    - name: 我的网站
-      icon: far fa-star
-      site:
-        - name: 个人主页 # 网站昵称
-          url: https://lete114.top/ # 网站地址
-          img: https://www.imlete.cn/img/avatar.png # 网站图标
-          description: Lete乐特个人主页 # 网站描述
-        - name: Lete乐特's Blog
-          url: https://blog.imlete.cn/
-          img: https://www.imlete.cn/img/avatar.png
-          description: 一个喜欢记录的地方
-    - name: 开源项目
-      icon: far fa-star
-      site:
-        - name: Hexo-theme-MengD
-          url: https://mengd.js.org/
-          img: https://mengd.js.org/img/logo.gif
-          description: 一个美丽且简洁的主题 A simple, elegant, and beautiful Hexo theme
-        - name: Hexo-SEO-AutoPush
-          url: https://github.com/lete114/hexo-seo-autopush
-          img: https://github.com/favicon.ico
-          description: 每天自动提交url到百度和谷歌必应 Daily automatic submission of urls to baidu and Google bing
+      - name: 我的网站
+        icon: far fa-star
+        site:
+          - name: 个人主页 # 网站昵称
+            url: https://lete114.top/ # 网站地址
+            img: https://www.imlete.cn/img/avatar.png # 网站图标
+            description: Lete乐特个人主页 # 网站描述
+          - name: Lete乐特's Blog
+            url: https://blog.imlete.cn/
+            img: https://www.imlete.cn/img/avatar.png
+            description: 一个喜欢记录的地方
+      - name: 开源项目
+        icon: far fa-star
+        site:
+          - name: Hexo-theme-MengD
+            url: https://mengd.js.org/
+            img: https://mengd.js.org/img/logo.gif
+            description: 一个美丽且简洁的主题 A simple, elegant, and beautiful Hexo theme
+          - name: Hexo-SEO-AutoPush
+            url: https://github.com/lete114/hexo-seo-autopush
+            img: https://github.com/favicon.ico
+            description: 每天自动提交url到百度和谷歌必应 Daily automatic submission of urls to baidu and Google bing
   # 一级菜单
   - name: 演示正常一级菜单 # 个人站点
     icon: far fa-star
@@ -136,6 +136,21 @@ error_404:
   subtitle: Oops! It looks like you're lost... # 副标题
   description: The Page you're looking for doesn't exist or another error occurred. # 描述
   return: webstack.cc # 返回的域名(网址)
+
+# 自定义引入外部css、js
+import:
+  headBefore: # 引入到<head>之后
+    -
+  headAfter: # 引入到</head>之前
+    -
+  bodyBefore: # 引入到<body>之后
+    -
+  bodyAfter: # 引入到</body>之前
+    -
+  # 例如：
+  # - <link rel="stylesheet" href="/css/index.css">
+  # - '<style>body{color: red}</style>' ## 注意由于css的‘{}’是关键符号所以需要(单/双)引号''
+  # - <script>alert(1)</script>
 
 # 访问量统计
 busuanzi:

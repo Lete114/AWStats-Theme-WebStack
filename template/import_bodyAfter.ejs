@@ -1,0 +1,9 @@
+<%# 引入到</body>之前 %>
+<% 
+
+const bodyAfter = theme.import.bodyAfter
+const arr = Array.isArray(bodyAfter) ? bodyAfter : [] 
+
+arr.forEach(function(bottom, i){ %>
+<%- bottom %>
+<% }) %>

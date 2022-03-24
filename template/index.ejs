@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
+    <%-include('import_headBefore')%>
     <title><%-theme.title%></title>
     <link rel="shortcut icon" href="<%-theme.favicon%>">
     <meta charset="UTF-8">
@@ -97,8 +98,10 @@
             border-radius: 2em;
         }
     </style>
+    <%-include('import_headAfter')%>
 </head>
 <body id="body">
+    <%-include('import_bodyBefore')%>
     <div class="page-container">
         <div class="sidebar-menu toggle-others fixed">
             <div class="sidebar-menu-inner">
@@ -295,6 +298,7 @@
         observer.observe();
 
     </script>
+    <%-include('import_bodyAfter')%>
 </body>
 
 </html>
